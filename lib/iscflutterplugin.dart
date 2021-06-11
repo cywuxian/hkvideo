@@ -25,7 +25,7 @@ const int EXCEPTION = 5;
 const int FINISH = 6;
 
 ///播放器创建成功的回调
-typedef void IscPlayerCreatedCallback(Iscflutterplugin? controller);
+typedef void IscPlayerCreatedCallback(Iscflutterplugin controller);
 
 ///播放器状态监听回调
 typedef void IscPlayerStatusCallback(int status);
@@ -191,7 +191,7 @@ class Iscflutterplugin {
   ///该回调全局只需设置一次即可
   void setStatusCallback(IscPlayerStatusCallback callback) {
     _channel.setMethodCallHandler((methodCall) async {
-      Map? arg = methodCall.arguments;
+      Map arg = methodCall.arguments;
       switch (methodCall.method) {
         case "onPlayerStatusCallback":
         case "onTalkStatusCallback":
@@ -204,8 +204,8 @@ class Iscflutterplugin {
   }
 
   ///转化错误码信息
-  String? getStatusMessage(int status) {
-    String? msg;
+  String getStatusMessage(int status) {
+    String msg;
     switch (status) {
       case IDLE:
         msg = "闲置状态";
