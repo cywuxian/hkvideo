@@ -98,10 +98,10 @@ class Iscflutterplugin {
 
   ///查询当前播放时间戳接口
   Future<dynamic> getOSDTime() async {
-    Map? ret = await _channel.invokeMethod('getOSDTime');
+    Map ret = await _channel.invokeMethod('getOSDTime');
 
     if (defaultTargetPlatform == TargetPlatform.iOS) {
-      String? time = ret!['ret'];
+      String time = ret!['ret'];
       if ("-1" != time) {
         return DateTime.parse(time!);
       }
