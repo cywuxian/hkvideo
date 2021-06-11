@@ -87,6 +87,6 @@ class _IscPlayerWidgetState extends State<IscPlayerWidget>
   ///平台view创建后的回调
   Future<void> _onPlatformViewCreated(id) async {
     _controller = Iscflutterplugin.init(id);
-    widget.onCreated!(_controller);
+    widget.onCreated(_controller);
   }
 }
