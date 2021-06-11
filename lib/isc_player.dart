@@ -5,10 +5,10 @@ import 'package:iscflutterplugin/iscflutterplugin.dart';
 ///海康isc播放器widget
 ///控件大小按照父控件计算
 class IscPlayerWidget extends StatefulWidget {
-  final IscPlayerCreatedCallback? onCreated;
+  final IscPlayerCreatedCallback onCreated;
 
   IscPlayerWidget({
-    Key? key,
+    Key key,
     this.onCreated,
   });
 
@@ -20,17 +20,17 @@ class IscPlayerWidget extends StatefulWidget {
 
 class _IscPlayerWidgetState extends State<IscPlayerWidget>
     with WidgetsBindingObserver {
-  Iscflutterplugin? _controller;
+  Iscflutterplugin _controller;
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
@@ -44,14 +44,14 @@ class _IscPlayerWidgetState extends State<IscPlayerWidget>
       ///安卓的onStop,IOS的viewWillDisappear,viewDidDisappear
       case AppLifecycleState.paused:
         if (_controller != null) {
-          _controller!.onPause();
+          _controller.onPause();
         }
         break;
 
       ///安卓的onResume,IOS的viewWillAppear,viewDidAppear
       case AppLifecycleState.resumed:
         if (_controller != null) {
-          _controller!.onResume();
+          _controller.onResume();
         }
         break;
 
