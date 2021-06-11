@@ -1,4 +1,4 @@
-# isc_flutter_plugin播放器插件
+# hksicVideo播放器插件
 
 * 插件基于海康isc平台原生SDK进行的二次封装
 * 插件为海康isc平台,flutter版播放器插件,支持Android和ios;
