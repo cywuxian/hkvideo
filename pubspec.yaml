@@ -6,6 +6,10 @@ homepage: https://www.jianshu.com/u/45c449c4488a
 environment:
   sdk: '>=2.10.0 <3.0.0'
   flutter: '>=1.10.0'
+  dio: ^2.2.2
+  crypto: ^2.1.4
+  path_provider: ^1.6.28
+  permission_handler: 4.4.0+hotfix.4
 
 dependencies:
   flutter:
