@@ -9,9 +9,9 @@ import 'package:flutter/material.dart';
 const String ARTEMIS_PATH = "/artemis";
 
 class ArtemisConfig {
-  static String? host;
-  static String? appKey;
-  static String? appSecret;
+  static String host;
+  static String appKey;
+  static String appSecret;
 
   ///根据路径生成认证header
   ///
@@ -27,7 +27,7 @@ class ArtemisConfig {
     var httpHeaders = "POST\n*/*\napplication/json\n";
     var customHeaders = "x-ca-key:${ArtemisConfig.appKey}\n";
     var msg = httpHeaders + customHeaders + url;
-    var secretBytes = utf8.encode(ArtemisConfig.appSecret!);
+    var secretBytes = utf8.encode(ArtemisConfig.appSecret);
     var messageBytes = utf8.encode(msg);
     var digest = Hmac(sha256, secretBytes).convert(messageBytes);
     var signature = base64Encode(digest.bytes);
@@ -128,9 +128,9 @@ class IscApi {
   /// version：1是海康SDK1.3版本，默认是2海康SDK1.4版本
   ///
   static Future<dynamic> getPlaybackUrl({
-    String? cameraIndexCode,
-    String? beginTime,
-    String? endTime,
+    String cameraIndexCode,
+    String beginTime,
+    String endTime,
     int recordLocation = 0,
     int version = 2,
   }) async {
