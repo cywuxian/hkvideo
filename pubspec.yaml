@@ -13,7 +13,8 @@ dependencies:
   dio: ^4.0.0
   crypto: ^3.0.1
   path_provider: ^2.0.1
-  permission_handler: 6.0.0
+  permission_handler: 
+    git: https://github.com/cywuxian/permission_handler.git
 
 flutter:
   plugin:
